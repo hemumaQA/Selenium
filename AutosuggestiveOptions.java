@@ -41,14 +41,17 @@ public class AutosuggestiveOptions {
 
         Actions actions = new Actions(driver);
         List<WebElement>  suggestions = driver.findElements(By.className("sbl1"));
-        actions.click().build().perform();//to get the  "auto suggestive option"using mouse action
+
+       System.out.println(suggestions);
 
 
         for(WebElement suggest:suggestions){
             System.out.println(suggest.getText());  //for each loop to get all the elements in the  "auto suggestive option"
 
-            if(suggest.getText().equalsIgnoreCase("Indian Bank")){
-                suggest.click();//to get the"Indian Bank" element in the dropdown
+            if(suggest.getText().equalsIgnoreCase("Indiana")){
+                suggest.click();//to get the"Indiana" element in the dropdown
+                System.out.println(suggest);
+
                 break;
 
             }
